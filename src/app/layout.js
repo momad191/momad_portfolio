@@ -1,0 +1,30 @@
+import "./globals.css";
+import { JetBrains_Mono } from "next/font/google";
+// import Navbar from "@/components/Navbar";
+// import TopNav from "@/components/TopNav";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import PageTransition from "@/components/PageTransition";
+import StairTransition from "@/components/StairTransition";
+
+const JetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-jetbrainsMono",
+});
+
+export default async function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={JetBrainsMono.variable}>
+        <Header />
+        <br></br>
+        <br></br>
+        <br></br>
+        <StairTransition />
+        <PageTransition>{children}</PageTransition>
+        {/* <Footer /> */}
+      </body>
+    </html>
+  );
+}
