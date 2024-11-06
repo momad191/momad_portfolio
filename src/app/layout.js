@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
+import ChatbotUi from "@/app/features/chatbot/ChatbotUi";
 
 const JetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -22,7 +23,10 @@ export default async function RootLayout({ children }) {
         <br></br>
         <br></br>
         <StairTransition />
-        <PageTransition>{children}</PageTransition>
+        <PageTransition>
+          {children}
+          <ChatbotUi />
+        </PageTransition>
         {/* <Footer /> */}
       </body>
     </html>

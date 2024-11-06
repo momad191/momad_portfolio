@@ -62,19 +62,38 @@ function Chatbot() {
       {/* Chatbot Icon */}
       {!isOpen && (
         <button
-          className="p-4 bg-cyan-500 text-white rounded-full shadow-lg transform transition-all duration-700 ease-in-out animate-bounce"
+          className="p-1 bg-accent text-white rounded-full shadow-lg transform transition-all duration-700 ease-in-out animate-bounce"
           onClick={toggleChatbot}
         >
-          <Image src="/cooker.png" width={100} height={100} alt="cooker" />
+          <Image
+            src="/momad.jpg"
+            width={120}
+            height={120}
+            alt="cooker"
+            className="rounded-full"
+          />
         </button>
       )}
 
       {/* Chatbot Popup */}
       {isOpen && (
-        <div className="relative w-80 h-[500px] bg-cyan-600 text-white rounded-lg shadow-lg flex flex-col transition-all duration-500">
+        <div className="relative w-80 h-[500px] bg-[#27272c] text-white rounded-lg shadow-lg flex flex-col transition-all duration-500">
           <header className="flex justify-between p-3 border-b border-black">
-            <h3>Chatbot</h3>
-            <button onClick={toggleChatbot} className="text-lg font-bold">
+            <div className="flex">
+              <Image
+                src="/momad.jpg"
+                width={40}
+                height={40}
+                alt="cooker"
+                className="rounded-md mr-3"
+              />
+              <h3 className="text-accent text-sm">Chat with momad AI</h3>
+            </div>
+
+            <button
+              onClick={toggleChatbot}
+              className="text-lg text-accent font-bold"
+            >
               ✖
             </button>
           </header>
@@ -144,7 +163,7 @@ function Chatbot() {
             />
             <button
               onClick={sendMessage}
-              className="ml-1 w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center"
+              className="ml-1 w-10 h-10 bg-accent rounded-full flex items-center justify-center"
             >
               ➤
             </button>
