@@ -79,13 +79,13 @@ function Chatbot() {
       {isOpen && (
         <div className="relative w-80 h-[500px] bg-[#27272c] text-white rounded-lg shadow-lg flex flex-col transition-all duration-500">
           <header className="flex justify-between p-3 border-b border-black">
-            <div className="flex">
+            <div className="flex flex-row items-center justify-start ">
               <Image
                 src="/momad.jpg"
                 width={40}
                 height={40}
                 alt="cooker"
-                className="rounded-md mr-3"
+                className="rounded-xl mr-3"
               />
               <h3 className="text-accent text-sm">Chat with momad AI</h3>
             </div>
