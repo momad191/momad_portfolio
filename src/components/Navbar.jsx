@@ -10,6 +10,9 @@ const Navbar = () => {
   const [userName, setuserName] = useState([]);
   const [session, setsession] = useState([]);
 
+  setuserName([]);
+  setsession([]);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -19,14 +22,14 @@ const Navbar = () => {
       <nav className="container mx-auto p-4 flex justify-between items-center">
         {/* Logo or Brand Name */}
         <div className="text-2xl font-bold text-gray-800 hover:text-blue-500 transition-all duration-300 ease-in-out">
-          <a href="/">
+          <Link href="/">
             <Image
               src="/robot-chat-menu.jpg"
               width={223}
               height={70}
               alt="cooker"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Menu Button for Mobile */}

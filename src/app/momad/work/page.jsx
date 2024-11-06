@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import react, { useState } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";

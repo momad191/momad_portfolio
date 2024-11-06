@@ -2,7 +2,7 @@ import "./globals.css";
 import { JetBrains_Mono } from "next/font/google";
 // import Navbar from "@/components/Navbar";
 // import TopNav from "@/components/TopNav";
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";

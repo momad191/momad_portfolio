@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import Image from "next/image";
 
-const page = () => {
+const Page = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   // setTimeout(() => {
@@ -87,4 +87,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

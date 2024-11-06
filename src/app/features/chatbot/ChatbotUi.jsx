@@ -108,7 +108,7 @@ function Chatbot() {
                 }`}
               >
                 {msg.sender === "bot" && (
-                  <img
+                  <Image
                     src="https://via.placeholder.com/30"
                     alt="Bot Avatar"
                     className="w-8 h-8 rounded-full mr-2"
@@ -124,7 +124,7 @@ function Chatbot() {
                   {msg.text}
                 </div>
                 {msg.sender === "user" && (
-                  <img
+                  <Image
                     src="https://via.placeholder.com/30"
                     alt="User Avatar"
                     className="w-8 h-8 rounded-full ml-2"
@@ -136,7 +136,7 @@ function Chatbot() {
             {/* Loading Animation */}
             {loading && (
               <div className="flex justify-start items-center space-x-2">
-                <img
+                <Image
                   src="https://via.placeholder.com/30"
                   alt="Bot Avatar"
                   className="w-8 h-8 rounded-full mr-2"

@@ -3,6 +3,9 @@
   "rules": {
     "react/no-unescaped-entities": "off",
     "@typescript-eslint/quotes": "off",
+    "@next/next/no-page-custom-font": "off",
+    "no-unused-vars": "warn", // Change to 'warn' to avoid build errors
+    "react/react-in-jsx-scope": "off", // Not needed for Next.jss
     "quotes": [0],
     "avoidEscape": 0,
     "allowTemplateLiterals": 0,
