@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-// import Link from "next/link";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -18,12 +18,12 @@ const Footer = () => {
                 Your 24/7 AI Support Assistant that helps you to grow your
                 business.
               </p>
-              <a
+              <Link
                 href="/"
                 className="text-blue-400 hover:text-blue-500 mt-2 inline-block"
               >
                 Learn More <i className="fa fa-caret-right"></i>
-              </a>
+              </Link>
             </div>
 
             <div className="footer-block">
@@ -31,36 +31,36 @@ const Footer = () => {
               <hr className="my-2 border-gray-600" />
               <ul className="space-y-2">
                 <li>
-                  <a
+                  <Link
                     href="/company/about"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/company/pricing"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     Pricing
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/company/portfolio"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     Portfolio
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/company/contact"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -70,68 +70,68 @@ const Footer = () => {
               <hr className="my-2 border-gray-600" />
               <ul className="space-y-2">
                 <li>
-                  <a
+                  <Link
                     href="/usecasess/book-authors"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     Book Authors
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/usecasess/coaches"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     Coaches
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/usecasess/course-creators"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     Course Creators
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/usecasess/entrepreneurs"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     Entrepreneurs
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/usecasess/musicians"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     Musicians
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/usecasess/podcasters"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     Podcasters
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/usecasess/web3-enthusiasts"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     Web 3.0 Enthusiasts
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/usecasess/jewelry-store-owners"
                     className="text-gray-400 hover:text-gray-200"
                   >
                     Jewelry Store Owners
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -143,15 +143,18 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-between items-center text-sm">
             <div className="space-x-4">
-              <a href="/company/privacy" className="hover:text-gray-400">
+              <Link href="/company/privacy" className="hover:text-gray-400">
                 Privacy Policy
-              </a>
-              <a href="/company/terms" className="hover:text-gray-400">
+              </Link>
+              <Link href="/company/terms" className="hover:text-gray-400">
                 Terms of Use
-              </a>
-              <a href="/company/cookie-policy" className="hover:text-gray-400">
+              </Link>
+              <Link
+                href="/company/cookie-policy"
+                className="hover:text-gray-400"
+              >
                 Cookies Policy
-              </a>
+              </Link>
             </div>
             <div className="mt-2 sm:mt-0 text-gray-400">
               &copy; 2024 Faizbot. All rights reserved.
