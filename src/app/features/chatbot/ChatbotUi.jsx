@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
+import { FaUser } from "react-icons/fa";
 import ChatbotAction from "./ChatbotAction";
 
 function Chatbot() {
@@ -67,9 +68,9 @@ function Chatbot() {
         >
           <Image
             src="/momad.jpg"
-            width={120}
-            height={120}
-            alt="cooker"
+            width={60}
+            height={60}
+            alt="momad image"
             className="rounded-full"
           />
         </button>
@@ -84,7 +85,7 @@ function Chatbot() {
                 src="/momad.jpg"
                 width={40}
                 height={40}
-                alt="cooker"
+                alt="momad image"
                 className="rounded-xl mr-3"
               />
               <h3 className="text-accent text-sm">Chat with momad AI</h3>
@@ -103,33 +104,29 @@ function Chatbot() {
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`flex items-center ${
+                className={`flex items-center  ${
                   msg.sender === "user" ? "justify-end" : "justify-start"
                 }`}
               >
                 {msg.sender === "bot" && (
                   <Image
-                    src="https://via.placeholder.com/30"
+                    src="/momad.jpg"
+                    width={40}
+                    height={40}
                     alt="Bot Avatar"
                     className="w-8 h-8 rounded-full mr-2"
                   />
                 )}
                 <div
-                  className={`p-2 max-w-xs rounded-lg ${
+                  className={`p-2 max-w-xs rounded-md ${
                     msg.sender === "user"
-                      ? "bg-black text-white"
+                      ? "bg-gray-500 text-white"
                       : "bg-gray-200 text-black"
                   }`}
                 >
                   {msg.text}
                 </div>
-                {msg.sender === "user" && (
-                  <Image
-                    src="https://via.placeholder.com/30"
-                    alt="User Avatar"
-                    className="w-8 h-8 rounded-full ml-2"
-                  />
-                )}
+                {msg.sender === "user" && <FaUser width={40} height={40} />}
               </div>
             ))}
 
@@ -138,6 +135,8 @@ function Chatbot() {
               <div className="flex justify-start items-center space-x-2">
                 <Image
                   src="https://via.placeholder.com/30"
+                  width={40}
+                  height={40}
                   alt="Bot Avatar"
                   className="w-8 h-8 rounded-full mr-2"
                 />

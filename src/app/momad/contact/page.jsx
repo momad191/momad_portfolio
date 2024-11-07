@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "../../../components/ui/button";
-import { Input } from "../../../components/ui/input";
-import { Textarea } from "../../../components/ui/textarea";
+
 import {
   Select,
   SelectContent,
@@ -35,6 +34,8 @@ const info = [
 import { motion } from "framer-motion";
 
 const Contact = () => {
+  const inputClassStyle =
+    "flex h-[48px] rounded-md border border-white/10 focus:border-accent font-light bg-primary px-4 py-5 text-base placeholder:text-white/60 outline-none";
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -56,10 +57,26 @@ const Contact = () => {
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="firstname" />
-                <Input type="lastname" placeholder="lastname" />
-                <Input type="email" placeholder="email" />
-                <Input type="phone" placeholder="phone" />
+                <input
+                  className={inputClassStyle}
+                  type="text"
+                  placeholder="firstname"
+                />
+                <input
+                  className={inputClassStyle}
+                  type="text"
+                  placeholder="lastname"
+                />
+                <input
+                  className={inputClassStyle}
+                  type="text"
+                  placeholder="email"
+                />
+                <input
+                  className={inputClassStyle}
+                  type="text"
+                  placeholder="phone"
+                />
               </div>
 
               {/* Select */}
@@ -77,8 +94,8 @@ const Contact = () => {
                 </SelectContent>
               </Select>
               {/* textarea */}
-              <Textarea
-                className="h-[200px]"
+              <textarea
+                className="h-[200px] flex min-h-[80px] w-full rounded-md border border-white/10 bg-primary px-4 py-5 text-base placeholder:text-white/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50"
                 placeholder="type your message here"
               />
               {/* Button */}
