@@ -21,7 +21,7 @@ export default async function ChatbotAction(text1) {
 
   // 1. Load, chunk and index the contents of the blog to create a retriever.
   const loader = new CheerioWebBaseLoader(
-    "http://localhost:3000/momad/cv11",
+    "https://momad-portfolio-git-mydev2-mohammed-emads-projects.vercel.app/momad/cv11",
     {
       selector: "<h1> <p> <ul> <li>",
     }
