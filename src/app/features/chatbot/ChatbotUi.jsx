@@ -134,16 +134,16 @@ function Chatbot() {
             {loading && (
               <div className="flex justify-start items-center space-x-2">
                 <Image
-                  src="https://via.placeholder.com/30"
+                  src="/momad.jpg"
                   width={40}
                   height={40}
                   alt="Bot Avatar"
                   className="w-8 h-8 rounded-full mr-2"
                 />
                 <div className="flex space-x-1">
-                  <div className="w-5 h-10 bg-black rounded-full animate-pulse"></div>
-                  <div className="w-5 h-10 bg-black rounded-full animate-pulse delay-75"></div>
-                  <div className="w-5 h-10 bg-black rounded-full animate-pulse delay-150"></div>
+                  <div className="w-5 h-5 bg-accent rounded-full animate-pulse"></div>
+                  <div className="w-5 h-5 bg-accent rounded-full animate-pulse delay-75"></div>
+                  <div className="w-5 h-5 bg-accent rounded-full animate-pulse delay-150"></div>
                 </div>
               </div>
             )}
