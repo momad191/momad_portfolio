@@ -10,8 +10,6 @@ import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
 import { MessagesPlaceholder } from "@langchain/core/prompts";
 
- 
-
 export default async function ChatbotAction(text1) {
   const llm = new ChatOpenAI({
     model: "gpt-3.5-turbo",
@@ -20,12 +18,7 @@ export default async function ChatbotAction(text1) {
   });
 
   // 1. Load, chunk and index the contents of the blog to create a retriever.
-  const loader = new CheerioWebBaseLoader(
-    "http://localhost:3000/momad/cv11" 
-  );
-
-
- 
+  const loader = new CheerioWebBaseLoader("http://localhost:3000/momad/cv11");
   const docs = await loader.load();
 
   const textSplitter = new RecursiveCharacterTextSplitter({
@@ -55,12 +48,15 @@ export default async function ChatbotAction(text1) {
   // ]);
 
   const contextualizeQSystemPrompt =
- 
-    "Your name is MOMAD AI you are a software engineer and you answer the visitors to the website about their questions." +
-     "the following pieces of retrieved context is your resume interact with the conversation according to it " +
-    "Use the following pieces of retrieved context to answer " +
-    "the question. If you don't know the answer, say that you " +
-    "don't know. Use three sentences maximum and keep the " +
+    // "Given a chat history and the latest user question " +
+    // "which might reference context in the chat history, " +
+    // "formulate a standalone question which can be understood " +
+    // "without the chat history. Do NOT answer the question, " +
+    // "just reformulate it if needed and otherwise return it as is." +
+    "You are an assistant for question-answering tasks. " +
+    "Use the following pieces of retrieved context to answer the visitors question " +
+    "If you don't know the answer, say that you don't know" +
+    "just answer about  experiences and skills education and any thing in the retrieved context. Use three sentences maximum and keep the " +
     "answer concise." +
     "\n\n" +
     "{context}";
