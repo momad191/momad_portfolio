@@ -1,5 +1,7 @@
 "use client";
+import React, { useState } from "react";
 import { Button } from "../../../components/ui/button";
+import { creatContact } from "../../actions/contact";
 
 import {
   Select,
@@ -11,7 +13,12 @@ import {
   SelectValue,
 } from "../../../components/ui/select";
 
-import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkedAlt,
+} from "react-icons/fa";
 
 const info = [
   {
@@ -36,6 +43,48 @@ import { motion } from "framer-motion";
 const Contact = () => {
   const inputClassStyle =
     "flex h-[48px] rounded-md border border-white/10 focus:border-accent font-light bg-primary px-4 py-5 text-base placeholder:text-white/60 outline-none";
+
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone: "",
+    // service: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  async function onSubmit(event) {
+    event.preventDefault();
+    try {
+      if (
+        formData.first_name == "" ||
+        formData.last_name == "" ||
+        formData.email == "" ||
+        formData.phone == "" ||
+        formData.message == ""
+      ) {
+        setError("please complete all nessary information");
+        setSuccess("");
+      } else {
+        await creatContact(formData);
+        setSuccess("Thank you for send the message");
+        formData.first_name == "";
+        setError("");
+      }
+    } catch (e) {
+      console.error(e);
+      setError("Check your Credentials");
+    }
+  }
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -49,7 +98,23 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl ">
+            <form
+              onSubmit={onSubmit}
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl "
+            >
+              {success !== "" && (
+                <div className=" flex flex-col-2 gap-3 items-center justify-center bg-accent border border-white p-4 rounded-xl">
+                  <FaCheckCircle className="text-5xl text-black/80 " />
+                  <h4 className="text-black text-2xl font-bold ">{success}</h4>
+                </div>
+              )}
+              {error !== "" && (
+                <div className=" flex flex-col-2 gap-3 items-center justify-center bg-red-500 border border-white p-4 rounded-xl">
+                  <FaCheckCircle className="text-5xl text-white/80 " />
+                  <h4 className="text-white text-2xl font-bold ">{error}</h4>
+                </div>
+              )}
+
               <h3 className="text-4xl text-accent">Lets work together</h3>
               <p className="text-white/60">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo,
@@ -60,27 +125,48 @@ const Contact = () => {
                 <input
                   className={inputClassStyle}
                   type="text"
-                  placeholder="firstname"
+                  placeholder="first name"
+                  name="first_name"
+                  id="first_name"
+                  value={formData.first_name}
+                  onChange={handleChange}
                 />
                 <input
                   className={inputClassStyle}
                   type="text"
-                  placeholder="lastname"
+                  placeholder="last name"
+                  name="last_name"
+                  id="last_name"
+                  value={formData.last_name}
+                  onChange={handleChange}
                 />
                 <input
                   className={inputClassStyle}
-                  type="text"
+                  type="email"
                   placeholder="email"
+                  name="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
                 <input
                   className={inputClassStyle}
                   type="text"
                   placeholder="phone"
+                  name="phone"
+                  id="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                 />
               </div>
 
               {/* Select */}
-              <Select>
+              <Select
+                name="service"
+                id="service"
+                value={formData.service}
+                onChange={handleChange}
+              >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
@@ -96,10 +182,15 @@ const Contact = () => {
               {/* textarea */}
               <textarea
                 className="h-[200px] flex min-h-[80px] w-full rounded-md border border-white/10 bg-primary px-4 py-5 text-base placeholder:text-white/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50"
+                type="textarea"
                 placeholder="type your message here"
+                name="message"
+                id="message"
+                value={formData.message}
+                onChange={handleChange}
               />
               {/* Button */}
-              <Button size="md" className="max-w-40">
+              <Button type="submit" size="md" className="max-w-40">
                 Send message
               </Button>
             </form>

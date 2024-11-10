@@ -18,12 +18,7 @@ export default async function ChatbotAction(text1) {
   });
 
   // 1. Load, chunk and index the contents of the blog to create a retriever.
-  const loader = new CheerioWebBaseLoader(
-    "https://momad-portfolio-ashen.vercel.app",
-    {
-      selector: "p, h1, h2, h3, span, div",
-    }
-  );
+  const loader = new CheerioWebBaseLoader("http://localhost:3000/momad/cv11");
   const docs = await loader.load();
 
   const textSplitter = new RecursiveCharacterTextSplitter({
@@ -58,12 +53,10 @@ export default async function ChatbotAction(text1) {
     // "formulate a standalone question which can be understood " +
     // "without the chat history. Do NOT answer the question, " +
     // "just reformulate it if needed and otherwise return it as is." +
-    "You are MOMAD AI for question-answering tasks. " +
-    "reponse by hello how can I help you, and ask the human about his name. " +
-    "also ask the human how he know you from website social media or related firend " +
-    "Use the following pieces of retrieved context to answer " +
-    "the question. If you don't know the answer, say that you " +
-    "don't know. Use three sentences maximum and keep the " +
+    "You are an assistant for question-answering tasks. " +
+    "Use the following pieces of retrieved context to answer the visitors question " +
+    "If you don't know the answer, say that you don't know" +
+    "just answer about  experiences and skills education and any thing in the retrieved context. Use three sentences maximum and keep the " +
     "answer concise." +
     "\n\n" +
     "{context}";
