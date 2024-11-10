@@ -1,4 +1,4 @@
-import React from 'react';
+ 'use server'
 
 function CV11() {
   return (

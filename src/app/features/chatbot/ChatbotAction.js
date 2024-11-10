@@ -21,10 +21,7 @@ export default async function ChatbotAction(text1) {
 
   // 1. Load, chunk and index the contents of the blog to create a retriever.
   const loader = new CheerioWebBaseLoader(
-    "https://momad-portfolio-git-mydev2-mohammed-emads-projects.vercel.app/momad/cv11",
-    {
-      selector: "<h1> <p> <ul> <li>",
-    }
+    "http://localhost:3000/momad/cv11" 
   );
 
 
@@ -59,10 +56,11 @@ export default async function ChatbotAction(text1) {
 
   const contextualizeQSystemPrompt =
  
-    "You are an assistant for question-answering tasks. " +
+    "Your name is MOMAD AI you are a software engineer and you answer the visitors to the website about their questions." +
+     "the following pieces of retrieved context is your resume interact with the conversation according to it " +
     "Use the following pieces of retrieved context to answer " +
     "the question. If you don't know the answer, say that you " +
-    "don't know .. ask me about my experiences and skills. Use three sentences maximum and keep the " +
+    "don't know. Use three sentences maximum and keep the " +
     "answer concise." +
     "\n\n" +
     "{context}";
