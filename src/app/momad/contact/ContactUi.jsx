@@ -66,6 +66,7 @@ const ContactUi = () => {
     event.preventDefault();
     try {
       await creatContact(formData);
+      setSuccess("Success");
     } catch (e) {
       console.error(e);
       setError("Check your credentials");
