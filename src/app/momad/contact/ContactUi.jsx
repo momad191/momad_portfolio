@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-// import { Button } from "../../../components/ui/button";
+import { Button } from "../../../components/ui/button";
 import { creatContact } from "../../actions/contact";
 
 import {
@@ -44,7 +44,6 @@ const ContactUi = () => {
   const inputClassStyle =
     "flex h-[48px] rounded-md border border-white/10 focus:border-accent font-light bg-primary px-4 py-5 text-base placeholder:text-white/60 outline-none";
 
-  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [formData, setFormData] = useState({
@@ -65,25 +64,34 @@ const ContactUi = () => {
 
   async function onSubmit(event) {
     event.preventDefault();
-    setIsLoading(true); // Start loading
     try {
-      await creatContact(formData);
-      setSuccess("Thank you for sending the message");
-      setError("");
+      if (
+        formData.first_name === "" ||
+        formData.last_name === "" ||
+        formData.email === "" ||
+        formData.phone === "" ||
+        formData.message === ""
+      ) {
+        setError("Please complete all necessary information");
+        setSuccess("");
+      } else {
+        await creatContact(formData);
+        setSuccess("Thank you for sending the message");
+        setError("");
 
-      // // Clear form data after successful submission
-      // setFormData({
-      //   first_name: "",
-      //   last_name: "",
-      //   email: "",
-      //   phone: "",
-      //   message: "",
-      // });
+        // // Clear form data after successful submission
+        // setFormData({
+        //   first_name: "",
+        //   last_name: "",
+        //   email: "",
+        //   phone: "",
+        //   message: "",
+        // });
+      }
     } catch (e) {
       console.error(e);
       setError("Check your credentials");
     }
-    setIsLoading(false); // End loading
   }
   return (
     <motion.section
@@ -123,40 +131,40 @@ const ContactUi = () => {
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
+                  className={inputClassStyle}
                   type="text"
                   placeholder="first name"
                   name="first_name"
                   id="first_name"
                   value={formData.first_name}
                   onChange={handleChange}
-                  className={inputClassStyle}
                 />
                 <input
+                  className={inputClassStyle}
                   type="text"
                   placeholder="last name"
                   name="last_name"
                   id="last_name"
                   value={formData.last_name}
                   onChange={handleChange}
-                  className={inputClassStyle}
                 />
                 <input
+                  className={inputClassStyle}
                   type="email"
                   placeholder="email"
                   name="email"
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={inputClassStyle}
                 />
                 <input
+                  className={inputClassStyle}
                   type="text"
                   placeholder="phone"
                   name="phone"
                   id="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className={inputClassStyle}
                 />
               </div>
 
@@ -181,24 +189,16 @@ const ContactUi = () => {
               </Select>
               {/* textarea */}
               <input
-                type="text"
+                className="h-[200px] flex min-h-[80px] w-full rounded-md border border-white/10 bg-primary px-4 py-5 text-base placeholder:text-white/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50"
                 placeholder="type your message here"
                 name="message"
                 id="message"
                 value={formData.message}
                 onChange={handleChange}
-                className={inputClassStyle}
-                // className="h-[200px] flex min-h-[80px] w-full rounded-md border border-white/10 bg-primary px-4 py-5 text-base placeholder:text-white/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50"
               />
               {/* Button */}
-
-              <button
-                type="submit"
-                size="md"
-                className="bg-accent p-4 text-black hover:text-white hover:bg-accent-hover inline-flex items-center justify-center whitespace-nowrap rounded-full text-base font-semibold ring-offset-white transition-colors max-w-40"
-                disabled={isLoading}
-              >
-                {isLoading ? "Sending..." : "Send message"}
+              <button type="submit" size="md" className="max-w-40">
+                Send message
               </button>
             </form>
           </div>
