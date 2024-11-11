@@ -76,8 +76,8 @@ const ContactUi = () => {
         setSuccess("");
       } else {
         await creatContact(formData);
-        setSuccess("Thank you for sending the message");
-        setError("");
+        // setSuccess("Thank you for sending the message");
+        // setError("");
 
         // // Clear form data after successful submission
         // setFormData({

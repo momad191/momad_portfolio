@@ -1,6 +1,6 @@
 "use server";
 import { Contact } from "../../model/contact";
-import { revalidatePath } from "next/cache";
+// import { revalidatePath } from "next/cache";
 
 export async function creatContact(formData) {
   try {
@@ -20,7 +20,7 @@ export async function creatContact(formData) {
       message,
     };
     await Contact.create(contact);
-    revalidatePath("/momad/contact");
+    // revalidatePath("/momad/contact");
   } catch (e) {
     throw new Error(e.message);
   }
