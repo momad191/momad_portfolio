@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Button } from "../../../components/ui/button";
+// import { Button } from "../../../components/ui/button";
 import { creatContact } from "../../actions/contact";
 
 import {
@@ -41,8 +41,8 @@ const info = [
 import { motion } from "framer-motion";
 
 const ContactUi = () => {
-  const inputClassStyle =
-    "flex h-[48px] rounded-md border border-white/10 focus:border-accent font-light bg-primary px-4 py-5 text-base placeholder:text-white/60 outline-none";
+  // const inputClassStyle =
+  //   "flex h-[48px] rounded-md border border-white/10 focus:border-accent font-light bg-primary px-4 py-5 text-base placeholder:text-white/60 outline-none";
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -131,7 +131,7 @@ const ContactUi = () => {
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
-                  className={inputClassStyle}
+                  // className={inputClassStyle}
                   type="text"
                   placeholder="first name"
                   name="first_name"
@@ -140,7 +140,7 @@ const ContactUi = () => {
                   onChange={handleChange}
                 />
                 <input
-                  className={inputClassStyle}
+                  // className={inputClassStyle}
                   type="text"
                   placeholder="last name"
                   name="last_name"
@@ -149,7 +149,7 @@ const ContactUi = () => {
                   onChange={handleChange}
                 />
                 <input
-                  className={inputClassStyle}
+                  // className={inputClassStyle}
                   type="email"
                   placeholder="email"
                   name="email"
@@ -158,7 +158,7 @@ const ContactUi = () => {
                   onChange={handleChange}
                 />
                 <input
-                  className={inputClassStyle}
+                  // className={inputClassStyle}
                   type="text"
                   placeholder="phone"
                   name="phone"
