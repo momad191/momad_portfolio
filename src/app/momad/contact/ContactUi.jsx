@@ -65,23 +65,31 @@ const ContactUi = ({ creatContact }) => {
     event.preventDefault();
     try {
       if (
-        formData.first_name == "" ||
-        formData.last_name == "" ||
-        formData.email == "" ||
-        formData.phone == "" ||
-        formData.message == ""
+        formData.first_name === "" ||
+        formData.last_name === "" ||
+        formData.email === "" ||
+        formData.phone === "" ||
+        formData.message === ""
       ) {
-        setError("please complete all nessary information");
+        setError("Please complete all necessary information");
         setSuccess("");
       } else {
         await creatContact(formData);
-        setSuccess("Thank you for send the message");
-        formData.first_name == "";
+        setSuccess("Thank you for sending the message");
         setError("");
+
+        // Clear form data after successful submission
+        setFormData({
+          first_name: "",
+          last_name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
       }
     } catch (e) {
       console.error(e);
-      setError("Check your Credentials");
+      setError("Check your credentials");
     }
   }
   return (
