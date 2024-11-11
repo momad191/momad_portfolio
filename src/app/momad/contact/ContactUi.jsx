@@ -44,6 +44,7 @@ const ContactUi = () => {
   const inputClassStyle =
     "flex h-[48px] rounded-md border border-white/10 focus:border-accent font-light bg-primary px-4 py-5 text-base placeholder:text-white/60 outline-none";
 
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [formData, setFormData] = useState({
@@ -64,6 +65,7 @@ const ContactUi = () => {
 
   async function onSubmit(event) {
     event.preventDefault();
+    setIsLoading(true); // Start loading
     try {
       if (
         formData.first_name === "" ||
@@ -92,6 +94,7 @@ const ContactUi = () => {
       console.error(e);
       setError("Check your credentials");
     }
+    setIsLoading(false); // End loading
   }
   return (
     <motion.section
@@ -188,8 +191,7 @@ const ContactUi = () => {
                 </SelectContent>
               </Select>
               {/* textarea */}
-              <input
-                type="text"
+              <textarea
                 placeholder="type your message here"
                 name="message"
                 id="message"
@@ -198,8 +200,14 @@ const ContactUi = () => {
                 className="h-[200px] flex min-h-[80px] w-full rounded-md border border-white/10 bg-primary px-4 py-5 text-base placeholder:text-white/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50"
               />
               {/* Button */}
-              <Button type="submit" size="md" className="max-w-40">
-                Send message
+
+              <Button
+                type="submit"
+                size="md"
+                className="max-w-40"
+                disabled={isLoading}
+              >
+                {isLoading ? "Sending..." : "Send message"}
               </Button>
             </form>
           </div>
