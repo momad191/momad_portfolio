@@ -131,49 +131,49 @@ const ContactUi = () => {
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
-                  className={inputClassStyle}
                   type="text"
                   placeholder="first name"
                   name="first_name"
                   id="first_name"
                   value={formData.first_name}
                   onChange={handleChange}
+                  className={inputClassStyle}
                 />
                 <input
-                  className={inputClassStyle}
                   type="text"
                   placeholder="last name"
                   name="last_name"
                   id="last_name"
                   value={formData.last_name}
                   onChange={handleChange}
+                  className={inputClassStyle}
                 />
                 <input
-                  className={inputClassStyle}
                   type="email"
                   placeholder="email"
                   name="email"
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
+                  className={inputClassStyle}
                 />
                 <input
-                  className={inputClassStyle}
                   type="text"
                   placeholder="phone"
                   name="phone"
                   id="phone"
                   value={formData.phone}
                   onChange={handleChange}
+                  className={inputClassStyle}
                 />
               </div>
 
               {/* Select */}
               <Select
-                name="service"
-                id="service"
-                value={formData.service}
-                onChange={handleChange}
+              // name="service"
+              // id="service"
+              // value={formData.service}
+              // onChange={handleChange}
               >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
@@ -188,13 +188,14 @@ const ContactUi = () => {
                 </SelectContent>
               </Select>
               {/* textarea */}
-              <textarea
-                className="h-[200px] flex min-h-[80px] w-full rounded-md border border-white/10 bg-primary px-4 py-5 text-base placeholder:text-white/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50"
+              <input
+                type="text"
                 placeholder="type your message here"
                 name="message"
                 id="message"
                 value={formData.message}
                 onChange={handleChange}
+                className="h-[200px] flex min-h-[80px] w-full rounded-md border border-white/10 bg-primary px-4 py-5 text-base placeholder:text-white/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50"
               />
               {/* Button */}
               <Button type="submit" size="md" className="max-w-40">
