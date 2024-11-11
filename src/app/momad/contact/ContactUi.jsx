@@ -79,14 +79,14 @@ const ContactUi = () => {
         setSuccess("Thank you for sending the message");
         setError("");
 
-        // Clear form data after successful submission
-        setFormData({
-          first_name: "",
-          last_name: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
+        // // Clear form data after successful submission
+        // setFormData({
+        //   first_name: "",
+        //   last_name: "",
+        //   email: "",
+        //   phone: "",
+        //   message: "",
+        // });
       }
     } catch (e) {
       console.error(e);
