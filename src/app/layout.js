@@ -9,18 +9,18 @@ import StairTransition from "@/components/StairTransition";
 import ChatbotUi from "@/app/features/chatbot/ChatbotUi";
 import { dbConnect } from "@/lib/mongo";
 
-// const JetBrainsMono = JetBrains_Mono({
-//   subsets: ["latin"],
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-//   variable: "--font-jetbrainsMono",
-// });
+const JetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-jetbrainsMono",
+});
 
 export default async function RootLayout({ children }) {
   await dbConnect();
 
   return (
     <html lang="en">
-      <body>
+      <body className={JetBrainsMono.variable}>
         <Header />
         <br></br>
         <br></br>
