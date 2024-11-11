@@ -1,3 +1,4 @@
+"user server";
 import ContactUi from "./ContactUi";
 
 const Contact = () => {
