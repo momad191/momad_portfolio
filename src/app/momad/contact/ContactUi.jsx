@@ -65,29 +65,7 @@ const ContactUi = () => {
   async function onSubmit(event) {
     event.preventDefault();
     try {
-      if (
-        formData.first_name === "" ||
-        formData.last_name === "" ||
-        formData.email === "" ||
-        formData.phone === "" ||
-        formData.message === ""
-      ) {
-        setError("Please complete all necessary information");
-        setSuccess("");
-      } else {
-        await creatContact(formData);
-        // setSuccess("Thank you for sending the message");
-        // setError("");
-
-        // // Clear form data after successful submission
-        // setFormData({
-        //   first_name: "",
-        //   last_name: "",
-        //   email: "",
-        //   phone: "",
-        //   message: "",
-        // });
-      }
+      await creatContact(formData);
     } catch (e) {
       console.error(e);
       setError("Check your credentials");
