@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Button } from "../../../components/ui/button";
+// import { Button } from "../../../components/ui/button";
 import { creatContact } from "../../actions/contact";
 
 import {
@@ -191,7 +191,8 @@ const ContactUi = () => {
                 </SelectContent>
               </Select>
               {/* textarea */}
-              <textarea
+              <input
+                type="text"
                 placeholder="type your message here"
                 name="message"
                 id="message"
@@ -201,14 +202,14 @@ const ContactUi = () => {
               />
               {/* Button */}
 
-              <Button
+              <button
                 type="submit"
                 size="md"
-                className="max-w-40"
+                className="bg-accent p-4 text-black hover:text-white hover:bg-accent-hover inline-flex items-center justify-center whitespace-nowrap rounded-full text-base font-semibold ring-offset-white transition-colors max-w-40"
                 disabled={isLoading}
               >
                 {isLoading ? "Sending..." : "Send message"}
-              </Button>
+              </button>
             </form>
           </div>
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
