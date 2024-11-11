@@ -1,8 +1,7 @@
-import { creatContact } from "../../actions/contact";
 import ContactUi from "./ContactUi";
 
 const Contact = () => {
-  return <ContactUi creatContact={creatContact} />;
+  return <ContactUi />;
 };
 
 export default Contact;
