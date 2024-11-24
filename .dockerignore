@@ -1,0 +1,7 @@
+Dockerfle
+.dockerignore
+node_modules
+npm-debug.log
+READMME.md
+.next 
+.git 

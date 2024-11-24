@@ -11,7 +11,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "../../../components/ui/select";
+} from "../../../components/ui/select"; 
 
 import {
   FaCheckCircle,
@@ -66,18 +66,18 @@ const Contact = () => {
     event.preventDefault();
     try {
       if (
-        formData.first_name == "" ||
-        formData.last_name == "" ||
-        formData.email == "" ||
-        formData.phone == "" ||
-        formData.message == ""
+        formData.first_name === "" ||
+        formData.last_name ==="" ||
+        formData.email === "" ||
+        formData.phone === "" ||
+        formData.message === ""
       ) {
         setError("please complete all nessary information");
         setSuccess("");
       } else {
         await creatContact(formData);
         setSuccess("Thank you for send the message");
-        formData.first_name == "";
+        formData.first_name === "";
         setError("");
       }
     } catch (e) {
