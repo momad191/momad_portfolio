@@ -4,25 +4,34 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Web develpment",
+    title: "full Stack Web develpment",
     description:
-      "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "I offer professional full stack web development services utilizing the MERN stack (MongoDB, Express.js, React, and Node.js) to create efficient, scalable, and robust web applications tailored to your needs. My expertise ensures that each component of your web solution is optimally designed and seamlessly integrated",
     href: "/",
   },
   {
     num: "02",
-    title: "UI/UX Design",
-    description:
-      "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    title: "Generative AI applications",
+    description: `I offer a range of services for Generative AI applications using the LangChain framework, including: Building Retrieval-Augmented Generation (RAG) applications.
+    Developing conversational RAG applications.
+    Creating question/answering systems over SQL data.
+    Constructing query analysis systems.
+    Developing local RAG applications.
+    Implementing question answering over graph databases.
+    Building PDF ingestion and question/answering systems.`,
+
     href: "/",
   },
   {
     num: "03",
-    title: "Logo Design",
-    description:
-      "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    title: "Front-End Development (React)",
+    description: `Responsive UI/UX: Crafting intuitive and responsive user interfaces that work seamlessly across all devices, providing a great experience for your users.
+      Custom Components: Building dynamic, reusable React components to enhance maintainability and efficiency.
+      State Management: Using tools like Redux and Context API to manage application state effectively for better performance and interactivity.
+      Animations & Transitions: Incorporating visually appealing animations to enrich user experience.`,
     href: "/",
   },
+
   {
     num: "04",
     title: "SEO",
@@ -71,7 +80,9 @@ const Services = () => {
                   {" "}
                   {service.title}
                 </h2>
-                <p className="text-white/60">{service.description}</p>
+                <p className="text-white/60 min-h-[300px]">
+                  {service.description}
+                </p>
                 <div className="border-b border-white/20  w-full"></div>
               </div>
             );

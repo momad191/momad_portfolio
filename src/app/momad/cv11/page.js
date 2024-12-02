@@ -1,14 +1,25 @@
 "use server";
 function CV11() {
   return (
-    <div>
-      <h1>Mohammed Emad Omer Mohammed</h1>
+    <div className="container mx-auto">
+      <h2>Generative AI Software Engineer</h2>
       <p>
         Email: moemad191@gmail.com | Phone: +966 551203580 | Location: Saudi
-        Arabia, Riyadh | LinkedIn
+        Arabia, Riyadh | LinkedIn:
+        <a
+          className="text-accent hover:text-accent-hover"
+          href="https://www.linkedin.com/in/mohammed-emad-5457b31b2/"
+        >
+          LinkedIn
+        </a>
       </p>
 
       <h2>About Me</h2>
+      <p>
+        I excel at crafting elegant digital experiences and I am proficient in
+        various programming languages, LLms, Prompt Engineering and GenerativeAI
+        technologies
+      </p>
       <p>
         I am a highly skilled software engineer with over 5 years of experience
         specializing in MERN Stack (MongoDB, Express.js, React.js, and Node.js)
@@ -16,8 +27,8 @@ function CV11() {
         languages and frameworks, with a focus on building intelligent AI-driven
         applications, particularly in the realm of Natural Language Processing
         (NLP) and Generative AI. I have a strong background in developing robust
-        web applications and AI-powered systems, and I continuously evolve with
-        cutting-edge technologies to deliver optimal solutions for clients.
+        web applications and AI-powered Applications, and I continuously evolve
+        with cutting-edge technologies to deliver optimal solutions for clients.
       </p>
 
       <h2>Skills</h2>
@@ -182,6 +193,21 @@ function CV11() {
               involving private data.
             </li>
           </ul>
+        </li>
+      </ul>
+      <h2>Hobbies </h2>
+
+      <ul className="px-5 justify-center">
+        <li>
+          -<span className="text-accent">Sport:</span> I like sports and the
+          best sports that I like is swimming and tennis{" "}
+        </li>
+        <li>
+          - <span className="text-accent">reading:</span>reading books specialy
+          short stories
+        </li>
+        <li>
+          - <span className="text-accent">play:</span>play video games
         </li>
       </ul>
     </div>

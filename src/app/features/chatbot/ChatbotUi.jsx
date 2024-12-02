@@ -68,8 +68,8 @@ function Chatbot() {
         >
           <Image
             src="/momad.jpg"
-            width={60}
-            height={60}
+            width={80}
+            height={80}
             alt="momad image"
             className="rounded-full"
           />
@@ -78,7 +78,7 @@ function Chatbot() {
 
       {/* Chatbot Popup */}
       {isOpen && (
-        <div className="relative w-80 h-[500px] bg-[#27272c] text-white rounded-lg shadow-lg flex flex-col transition-all duration-500">
+        <div className=" w-80 h-[500px] bg-[#27272c] text-white rounded-lg shadow-lg flex flex-col transition-all duration-500">
           <header className="flex justify-between p-3 border-b border-black">
             <div className="flex flex-row items-center justify-start ">
               <Image

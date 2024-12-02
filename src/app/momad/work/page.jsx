@@ -22,11 +22,11 @@ const projects = [
     category: "fron-end",
     title: "project1",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit quo quibusdam, distinctio officia in enim!",
+      "fron-end design for Ruknan for public Relations building the website with HTML, CSS, and JavaScript(JQuery Library),This is the company's main website and shows key information about the company and contact information.",
     stack: [{ name: "Html5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: "/robot-chat2.jpg",
-    live: "/",
-    github: "/",
+    image: "/project1.png",
+    live: "https://ruknan.com.sa",
+    github: "https://github.com/momad191/ruknan-website",
   },
 
   {
@@ -36,7 +36,7 @@ const projects = [
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit quo quibusdam, distinctio officia in enim!",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/robot-chat2.jpg",
+    image: "/project1.png",
     live: "/",
     github: "/",
   },
@@ -48,9 +48,25 @@ const projects = [
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit quo quibusdam, distinctio officia in enim!",
     stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
-    image: "/robot-chat2.jpg",
+    image: "/project3.png",
     live: "/",
     github: "/",
+  },
+  {
+    num: "04",
+    category: "fullstack",
+    title: "project4",
+    description:
+      "this project for faizbot website, website for chatbots design and development ",
+    stack: [
+      { name: "Python" },
+      { name: "Langchain" },
+      { name: "Next.js" },
+      { name: "Tailwind.css" },
+    ],
+    image: "/project4.png",
+    live: "https://www.faizads.com/",
+    github: "https://github.com/momad191/chatbot-buisness-Arabic",
   },
 ];
 
@@ -103,7 +119,7 @@ const Work = () => {
               {/* buttons */}
               <div className="flex items-center gap-4">
                 {/* live project button */}
-                <Link href={project.live}>
+                <Link href={project.live} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -116,7 +132,7 @@ const Work = () => {
                   </TooltipProvider>
                 </Link>
                 {/* github project button */}
-                <Link href={project.github}>
+                <Link href={project.github} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -151,7 +167,7 @@ const Work = () => {
                       <Image
                         src={project.image}
                         fill
-                        className="object-cover"
+                        className="object-scale-down"
                         alt=""
                       />
                     </div>

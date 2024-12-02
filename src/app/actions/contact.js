@@ -9,6 +9,7 @@ export async function creatContact(formData) {
     const email = formData["email"];
     const phone = formData["phone"];
     const message = formData["message"];
+    const service = formData["service"];
 
     // console.log(t_name, t_desc,t_employee);
     if (!first_name) return null;
@@ -18,6 +19,7 @@ export async function creatContact(formData) {
       email,
       phone,
       message,
+      service,
     };
     await Contact.create(contact);
     // revalidatePath("/momad/contact");

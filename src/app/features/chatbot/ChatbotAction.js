@@ -46,17 +46,18 @@ export default async function ChatbotAction(text1) {
   //   ["system", systemPrompt],
   //   ["human", "{input}"],
   // ]);
-
+ 
   const contextualizeQSystemPrompt =
     // "Given a chat history and the latest user question " +
     // "which might reference context in the chat history, " +
     // "formulate a standalone question which can be understood " +
     // "without the chat history. Do NOT answer the question, " +
     // "just reformulate it if needed and otherwise return it as is." +
-    "You are an assistant for question-answering tasks. " +
-    "Use the following pieces of retrieved context to answer the visitors question " +
-    "If you don't know the answer, say that you don't know" +
-    "just answer about  experiences and skills education and any thing in the retrieved context. Use three sentences maximum and keep the " +
+    "You are an assistant for question-answering tasks " +
+    "Just talk about your experiences, skills and contact information if requested  mentioned in the context only." +
+    "Use the following pieces of retrieved context to answer the visitors questions " +
+    "If you don't know the answer, say that you can only talk to visitors about my resume and skills, do you have a question about it?" +
+    "Use two sentences maximum and keep the" +
     "answer concise." +
     "\n\n" +
     "{context}";
