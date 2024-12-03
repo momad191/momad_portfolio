@@ -65,8 +65,39 @@ const ContactUi = () => {
     }));
   };
 
+  const validateForm = () => {
+    const { first_name, last_name, email, phone, service, message } = formData;
+
+    if (!first_name || !last_name || !email || !phone || !service || !message) {
+      return "All fields are required.";
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return "Please enter a valid email address.";
+    }
+
+    const phoneRegex = /^\d{8,15}$/;
+    if (!phoneRegex.test(phone)) {
+      return "Phone number must contain only digits and be 8-15 characters long.";
+    }
+
+    if (message.length < 10) {
+      return "Message must be at least 10 characters long.";
+    }
+
+    return null; // No errors
+  };
+
   async function onSubmit(event) {
     event.preventDefault();
+    const validationError = validateForm();
+    if (validationError) {
+      setError(validationError);
+      setSuccess("");
+      return;
+    }
+
     setLoading(true); // Start loading
     try {
       await creatContact(formData);
@@ -184,9 +215,9 @@ const ContactUi = () => {
                     <SelectContent>
                       <SelectGroup>
                         <SelectLabel>Select a service</SelectLabel>
-                        <SelectItem value="est">Web Development</SelectItem>
-                        <SelectItem value="cst">UI/UX Design</SelectItem>
-                        <SelectItem value="mst">Logo Design</SelectItem>
+                        <SelectItem value="web">Web Development</SelectItem>
+                        <SelectItem value="uiux">UI/UX Design</SelectItem>
+                        <SelectItem value="logo">Logo Design</SelectItem>
                       </SelectGroup>
                     </SelectContent>
                   </Select>
@@ -218,9 +249,9 @@ const ContactUi = () => {
                   <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
                     <div className="text-[28px]">{item.icon}</div>
                   </div>
-                  <div className="flex-1">
-                    <p className="text-white/60">{item.title}</p>
-                    <h3 className="text-xl">{item.description}</h3>
+                  <div className="font-primary text-white/80">{item.title}</div>
+                  <div className="font-primary font-bold text-white">
+                    {item.description}
                   </div>
                 </li>
               ))}

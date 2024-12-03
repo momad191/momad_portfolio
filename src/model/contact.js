@@ -17,10 +17,10 @@ const contactSchema = new Schema({
     required: true,
     type: String,
   },
-  // service: {
-  //   // required: true,
-  //   type: String,
-  // },
+  service: {
+    required: true,
+    type: String,
+  },
   message: {
     required: true,
     type: String,

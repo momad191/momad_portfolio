@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## your vps is not like shared servers your vps isolated and al resources is yours
 
-## Getting Started
+## first enter to your VPS By SSH
 
-First, run the development server:
+ssh root@123.123.123
+password:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## go to root directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+pwd
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## check if git installed in the serever
 
-To learn more about Next.js, take a look at the following resources:
+which git
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## clear
 
-## Deploy on Vercel
+## check if nodejs installed
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+node -v
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## install nodejs from https://github.com/nvm-sh/nvm
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
+## close and reopen your terminal to start using nvm / or run the following to use it now
+
+## use it
+
+nvm -v
+
+## use nvm to install nodejs
+
+nvm install --lts
+
+## after installing
+
+node -v
+npm -v
+
+## start git cloning your repo
+
+git clone https://github.com/momad191/
+
+ls
+
+cd momad-portfolio/
+
+ls
+
+## now we can run our node application on npm run dev But its not optimal for production
+
+npm install
+npm install --legacy-peer-
+npm run build
+npm run start

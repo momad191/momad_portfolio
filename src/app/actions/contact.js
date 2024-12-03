@@ -11,7 +11,7 @@ export async function creatContact(formData) {
     const message = formData["message"];
     const service = formData["service"];
 
-    // console.log(t_name, t_desc,t_employee);
+    console.log(service);
     if (!first_name) return null;
     const contact = {
       first_name,
