@@ -46,7 +46,7 @@ npm -v
 
 ## start git cloning your repo
 
-git clone https://github.com/momad191/
+git clone https://github.com/momad191/momad_portfolio.git
 
 ls
 
@@ -57,6 +57,6 @@ ls
 ## now we can run our node application on npm run dev But its not optimal for production
 
 npm install
-npm install --legacy-peer-
+npm install --legacy-peer-deps
 npm run build
 npm run start
