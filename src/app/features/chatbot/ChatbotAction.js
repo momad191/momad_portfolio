@@ -13,7 +13,8 @@ import { MessagesPlaceholder } from "@langchain/core/prompts";
 export default async function ChatbotAction(text1) {
   const llm = new ChatOpenAI({
     model: "gpt-3.5-turbo",
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey:
+      "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",
     temperature: 0,
   });
 
@@ -46,7 +47,7 @@ export default async function ChatbotAction(text1) {
   //   ["system", systemPrompt],
   //   ["human", "{input}"],
   // ]);
- 
+
   const contextualizeQSystemPrompt =
     // "Given a chat history and the latest user question " +
     // "which might reference context in the chat history, " +
