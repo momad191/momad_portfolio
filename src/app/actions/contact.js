@@ -1,8 +1,11 @@
 "use server";
+
 import { Contact } from "../../model/contact";
+import { dbConnect } from "../../lib/mongo";
 // import { revalidatePath } from "next/cache";
 
 export async function creatContact(formData) {
+  await dbConnect();
   try {
     const first_name = formData["first_name"];
     const last_name = formData["last_name"];
